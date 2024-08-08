@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Qyxra</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="HTML5 website template">
+  <meta name="keywords" content="global, template, html, sass, jquery">
+  <meta name="author" content="Bucky Maler">
+  <link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+
+<!-- notification for small viewports and landscape oriented smartphones -->
+<div class="device-notification">
+  <a class="device-notification--logo" href="#0">
+    <img src="assets/img/alert.png" alt="Global" width="30">
+    <p>PERHATIAN</p>
+  </a>
+  <p class="device-notification--message"> Perangkat Ini Sedang Dalam Resolusi Kecil Jadi Tidak Bisa Menampilkan Gambar Jadi Kami Harus Meminta Anda Mengaktifkan Mode Dekstop Atau Mengarahkan Perangkat Anda Ke Potret Untuk Mengaktifkan Mode PowerFull</p>
+</div>
+
+<style>
+  .notif-desktop {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      background-color: #1d1c1c;
+      padding: 10px;
+      text-align: center;
+      border-bottom: 1px solid #ffffff;
+      z-index: 1000;
+      display: none;
+  }
+
+  .notif-desktop p {
+      font-size: 16px;
+      margin-bottom: 10px;
+  }
+
+  #close-notif {
+      background-color: #4CAF50;
+      color: #fff;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+  }
+
+  #close-notif:hover {
+      background-color: #3e8e41;
+  }
+</style>
+
+<div id="notif-desktop" class="notif-desktop">
+  <p>Tolong aktifkan mode desktop untuk pengalaman yang lebih baik!</p>
+  <button id="close-notif">Tutup</button>
+</div>
+<script>
+  // Periksa apakah pengguna menggunakan mode desktop
+  function isDesktopMode() {
+      return window.innerWidth >= 768; // Ukuran layar desktop yang umum
+  }
+
+  // Tampilkan notifikasi jika pengguna tidak menggunakan mode desktop
+  if (!isDesktopMode()) {
+      document.getElementById('notif-desktop').style.display = 'block';
+  }
+
+  // Tutup notifikasi ketika tombol "Tutup" diklik
+  document.getElementById('close-notif').addEventListener('click', function() {
+      document.getElementById('notif-desktop').style.display = 'none';
+  });
+
+  // Periksa ukuran layar saat window di-resize
+  window.addEventListener('resize', function() {
+      if (isDesktopMode()) {
+          document.getElementById('notif-desktop').style.display = 'none';
+      } else {
+          document.getElementById('notif-desktop').style.display = 'block';
+      }
+  });
+</script>
+
+<div class="perspective effect-rotate-left">
+  <div class="container"><div class="outer-nav--return"></div>
+    <div id="viewport" class="l-viewport">
+      <div class="l-wrapper">
+        <header class="header">
+          <a class="header--logo" href="#0">
+            <p> Qyxraszz portfolio / ></p>
+          </a>
+          <button class="header--cta cta">Selengkapnya</button>
+          <div class="header--nav-toggle">
+            <span></span>
+          </div>
+        </header>
+        <nav class="l-side-nav">
+          <ul class="side-nav">
+            <li class="is-active"><span>Home</span></li>
+            <li><span>Skills?</span></li>
+            <li><span>About Me</span></li>
+            <li><span>Contact</span></li>
+            <li><span>In Full</span></li>
+          </ul>
+        </nav>
+        <ul class="l-main-content main-content">
+          <li class="l-section section section--is-active">
+            <div class="intro">
+              <div class="intro--banner">
+                <h1>This Is<br>A Skill That<br>I Can Do.</h1>
+                <h4> <hr><i>( ini skil yang aku bisa lakukan )</i> </h4>
+                <button class="cta"><b>Selengkapnya</b>
+                  
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                    <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
+                  </g>
+                  </svg>
+                  <span class="btn-background"></span>
+                </button>
+                
+                <img src="assets/img/eren.png" alt="eren" >
+                
+                <!-- background video -->
+                <div class="wrapper">
+                  <video class="video-belakang" autoplay muted loop>
+                    <source src="assets/img/animeeyess.mp4" type="video/mp4">
+                  </video>
+                  <div class="text">
+                    <!-- Tambahkan teks Anda di sini -->
+                  </div>
+                </div>
+                
+                <style>
+                  .wrapper {
+                    position: relative;
+                  }
+                  
+                  .video-belakang {
+                    position: absolute;
+                    bottom: 100%; /* move the video to the top */
+                    width: 100%;
+                    height: 300px; /* tinggi video */
+                    object-fit: cover;
+                    z-index: -1; /* make sure the video is behind the text */
+                  }
+                  
+                  .text {
+                    color: #fff; /* adjust the text color as needed */
+                  }
+                </style>
+                <!-- end background video -->
+                
+                <div class="wrapper">
+                  <div class="text">
+                    <!-- isi teks Anda disini -->
+                  </div>
+                  <div class="foto-belakang" id="foto-belakang"></div>
+                </div>
+                
+              </div>
+              <div class="intro--options">
+
+                <div style="text-align: left; width: 150%; margin: 0 auto;">
+                  <h1> Hello There!</h1>
+                  <p>I am Dimas Hafizh, or better known as Qyxra I'm a junior designer, editor, and website developer who is learning to be dedicated to creating stunning and functional digital works With my experience and learning in the field of graphic design,<br> content editing, and studying in web development, here I have a hobby of designing a poster, editing a video and modifying a website, I love the digital world and always try to learn to develop my skills, I am ready to help you realize your digital vision!</p>
+                  <h3>@Tiktok : qyxraaaa</h3>
+                  <p>Tiktok yang sering saya gunakann untuk mengupload video editing saya.</p>
+                  <h3>@Insta : qyxrasz</h3>
+                  <p>Ini instagram saya jika kalian ingin menanyakan sesuatu.</p>
+                </div>
+
+<!-- Buat elemen audio dengan autoplay dan loop -->
+<audio id="lagu" class="audio" autoplay="autoplay" loop muted>
+  <!-- Tambahkan sumber lagu -->
+  <source src="assets/from the island.mp3" type="audio/mp3">
+  <!-- Tambahkan pesan jika browser tidak mendukung -->
+  Your browser does not support the audio element.
+</audio>
+
+<!-- Buat elemen audio dengan autoplay dan loop -->
+<audio id="lagu" class="audio" autoplay="autoplay" loop muted>
+  <!-- Tambahkan sumber lagu -->
+  <source src="assets/from the island.mp3" type="audio/mp3">
+  <!-- Tambahkan pesan jika browser tidak mendukung -->
+  Your browser does not support the audio element.
+</audio>
+
+<!-- Buat button play kecil -->
+<button id="play-btn" class="play-btn">
+  <i class="fas fa-play"></i>
+</button>
+
+<!-- Buat elemen audio dengan autoplay dan loop -->
+<audio id="lagu" class="audio" autoplay="autoplay" loop muted>
+  <!-- Tambahkan sumber lagu -->
+  <source src="assets/from the island.mp3" type="audio/mp3">
+  <!-- Tambahkan pesan jika browser tidak mendukung -->
+  Your browser does not support the audio element.
+</audio>
+
+<!-- Buat button play kecil -->
+<button id="play-btn" class="play-btn">
+  <i class="fas fa-play"></i>
+</button>
+
+<!-- Tambahkan CSS untuk mengubah posisi elemen audio dan button play -->
+<style>
+  .audio {
+    position: fixed; /* Ubah posisi menjadi fixed */
+    top: 10px; /* Atur jarak dari atas */
+    right: 10px; /* Atur jarak dari kanan */
+    z-index: 1; /* Atur z-index agar elemen audio berada di atas elemen lain */
+  }
+
+  .play-btn {
+    position: fixed; /* Ubah posisi menjadi fixed */
+    bottom: 10px; /* Atur jarak dari bawah */
+    right: 10px; /* Atur jarak dari kanan */
+    z-index: 1; /* Atur z-index agar button play berada di atas elemen lain */
+    background-color: transparent; /* Ubah background menjadi transparan */
+    border: none; /* Hilangkan border button */
+    padding: 10px; /* Tambahkan padding button */
+    cursor: pointer; /* Ubah cursor menjadi pointer */
+  }
+
+  .play-btn:hover {
+    background-color: rgba(0, 0, 0, 0.2); /* Ubah background menjadi transparan dengan opacity 0.2 saat hover */
+  }
+</style>
+
+<!-- Buat button play kecil -->
+<button id="play-btn" class="play-btn">
+  <i class="fas fa-play"></i>
+</button>
+
+<!-- Tambahkan CSS untuk mengubah posisi elemen button play -->
+<style>
+  .play-btn {
+    position: fixed; /* Ubah posisi menjadi fixed */
+    bottom: 2vh; /* Atur jarak dari bawah menggunakan vh */
+    right: 2vw; /* Atur jarak dari kanan menggunakan vw */
+    z-index: 1; /* Atur z-index agar button play berada di atas elemen lain */
+    background-color: transparent; /* Ubah background menjadi transparan */
+    border: none; /* Hilangkan border button */
+    padding: 1.5vw; /* Tambahkan padding button menggunakan vw */
+    cursor: pointer; /* Ubah cursor menjadi pointer */
+    font-size: 2vw; /* Ubah ukuran font menggunakan vw */
+  }
+
+  .play-btn:hover {
+    background-color: rgba(0, 0, 0, 0.2); /* Ubah background menjadi transparan dengan opacity 0.2 saat hover */
+  }
+</style>
+
+<!-- Tambahkan script untuk menggunakan Howler.js -->
+<script src="https://cdn.jsdelivr.net/npm/howler@2.2.1/dist/howler.min.js"></script>
+
+<script>
+  const sound = new Howl({
+    src: ['assets/from the island.mp3'],
+    autoplay: true,
+    loop: true
+  });
+
+  // Tambahkan event listener pada button play untuk memainkan audio
+  const playBtn = document.getElementById('play-btn');
+  playBtn.addEventListener('click', () => {
+    sound.play();
+  });
+</script>
+
+
+
+<!-- Tambahkan link untuk font awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+              </div>
+            </div>
+          </li>
+          <li class="l-section section">
+            <div class="work">
+              <h2>Selected Skills</h2>
+              <div class="work--lockup">
+                <ul class="slider">
+                  <li class="slider--item slider--item-left">
+                    <a href="#0">
+                      <div class="slider--item-image">
+                        <img src="assets/img/editor.jpg" alt="Desain">
+                      </div>
+                      <p class="slider--item-title">Desain</p>
+                      <p class="slider--item-description">Ya! Seperti Judul, Disini Saya Gemar Mendesain sesuatu Dari Poster,Logo,Picture Dan Sebagainya.</p>
+                    </a>
+                  </li>
+                  <li class="slider--item slider--item-center">
+                    <a href="#0">
+                      <div class="slider--item-image">
+                        <img src="assets/img/editing.jpg" alt="editor">
+                      </div>
+                      <p class="slider--item-title">Editing</p>
+                      <p class="slider--item-description">Saya juga sangat gemar membuat video atau mengedit berbagai video berupa video typhograph, content, effect visual Dan Sebagainya</p>
+                    </a>
+                  </li>
+                  <li class="slider--item slider--item-right">
+                    <a href="#0">
+                      <div class="slider--item-image">
+                        <img src="assets/img/teknologi.jpg" alt="teknologi">
+                      </div>
+                      <p class="slider--item-title">TecnoSkills</p>
+                      <p class="slider--item-description">Di sini saya sangat suka dengan dunia teknologi, itu hobby saya. saya bisa membuat, me-remake, troubleshooting, mengakali, bermain dan sebagainya di dunia teknologi walaupun saya masih terus belajar hehe..</p>
+                    </a>
+                  </li>
+                </ul>
+                <div class="slider--prev">
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                  viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                    <path d="M561,1169C525,1155,10,640,3,612c-3-13,1-36,8-52c8-15,134-145,281-289C527,41,562,10,590,10c22,0,41,9,61,29
+                    c55,55,49,64-163,278L296,510h575c564,0,576,0,597,20c46,43,37,109-18,137c-19,10-159,13-590,13l-565,1l182,180
+                    c101,99,187,188,193,199c16,30,12,57-12,84C631,1174,595,1183,561,1169z"/>
+                  </g>
+                  </svg>
+                </div>
+                <div class="slider--next">
+                  <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                  <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                    <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
+                  </g>
+                  </svg>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="l-section section">
+            <div class="about">
+              <div class="about--banner">
+                <h2>"Don’t worry<br>About Failure;<br>You Only Have<br>To Be Right Once."</h2>
+                <a href="#0">This Quote 
+                  <span>
+                    <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 150 118" style="enable-background:new 0 0 150 118;" xml:space="preserve">
+                    <g transform="translate(0.000000,118.000000) scale(0.100000,-0.100000)">
+                      <path d="M870,1167c-34-17-55-57-46-90c3-15,81-100,194-211l187-185l-565-1c-431,0-571-3-590-13c-55-28-64-94-18-137c21-20,33-20,597-20h575l-192-193C800,103,794,94,849,39c20-20,39-29,61-29c28,0,63,30,298,262c147,144,272,271,279,282c30,51,23,60-219,304C947,1180,926,1196,870,1167z"/>
+                    </g>
+                    </svg>
+                  </span>
+                </a>
+                <img src="assets/img/anime3.png" alt="About Us">
+              </div>
+              <div class="about--options">
+                <a href="#0">
+                  <h3>Never give up</h3>
+                </a>
+                <a href="#0">
+                  <h3>&emsp;&ensp;Creative</h3>
+                </a>
+                <a href="#0">
+                  <h3>&ensp;The Winner</h3>
+                </a>
+              </div>
+            </div>
+          </li>
+          <li class="l-section section">
+            <div class="contact">
+              <div class="contact--lockup">
+                <div class="modal">
+                  <div class="modal--information">
+                    <p>Indonesia, jawa barat</p>
+                    <a href="mailto:dimashafizd67@gmail.com">dimashafizd67@gmail.com</a>
+                    <a href="tel:+148126287560">+62 895 3155 0143</a>
+                  </div>
+                  <ul class="modal--options">
+                    <li><a href="mailto:dimashafizd67@gmail.com">Contact Us</a></li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </li>
+          <li class="l-section section">
+            <div class="hire">
+              <h2>Select my ability that you want to ask about?</h2>
+              <!-- checkout formspree.io for easy form setup -->
+              <form class="work-request">
+                <div class="work-request--options">
+                  <span class="options-a">
+                    <input id="opt-1" type="checkbox" value="app design">
+                    <label for="opt-1">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
+                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
+                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>
+                      </g>
+                      </svg>
+                      Web Design
+                    </label>
+                    <input id="opt-2" type="checkbox" value="graphic design">
+                    <label for="opt-2">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
+                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
+                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>
+                      </g>
+                      </svg>
+                      Graphic Design
+                    </label>
+                    <input id="opt-3" type="checkbox" value="motion design">
+                    <label for="opt-3">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
+                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
+                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>
+                      </g>
+                      </svg>
+                      Re-Make Design
+                    </label>
+                  </span>
+                  <span class="options-b">
+                    <input id="opt-4" type="checkbox" value="ux design">
+                    <label for="opt-4">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
+                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
+                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>
+                      </g>
+                      </svg>
+                      Editing
+                    </label>
+                    <input id="opt-5" type="checkbox" value="webdesign">
+                    <label for="opt-5">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
+                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
+                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>
+                      </g>
+                      </svg>
+                      Or Something?
+                    </label>
+                    <input id="opt-6" type="checkbox" value="marketing">
+                    <label for="opt-6">
+                      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+                      viewBox="0 0 150 111" style="enable-background:new 0 0 150 111;" xml:space="preserve">
+                      <g transform="translate(0.000000,111.000000) scale(0.100000,-0.100000)">
+                        <path d="M950,705L555,310L360,505C253,612,160,700,155,700c-6,0-44-34-85-75l-75-75l278-278L550-5l475,475c261,261,475,480,475,485c0,13-132,145-145,145C1349,1100,1167,922,950,705z"/>
+                      </g>
+                      </svg>
+                      Photo/video graphics
+                    </label>
+                  </span>
+                </div>
+                <div class="work-request--information">
+                  <div class="information-name">
+                    <input id="name" type="text" spellcheck="false">
+                    <label for="name">Name</label>
+                  </div>
+                  <div class="information-email">
+                    <input id="email" type="email" spellcheck="false">
+                    <label for="email">Email</label>
+                  </div>
+                </div>
+                <input type="submit" value="Send Request">
+              </form>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <ul class="outer-nav">
+    <li class="is-active">Home</li>
+    <li>Skills</li>
+    <li>About Me</li>
+    <li>Contact</li>
+    <li>In full</li>
+  </ul>
+</div>
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+<script>window.jQuery || document.write('<script src="assets/js/vendor/jquery-2.2.4.min.js"><\/script>')</script>
+<script src="assets/js/functions-min.js"></script>
+</body>
+</html>
